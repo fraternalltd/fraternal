@@ -470,6 +470,10 @@
     <p class="soc-note">@fraternalcabins &mdash; pages launching soon</p>
   </div>
   <div class="fu"><form class="cf" onsubmit="cfSubmit(event)">
+    <input type="hidden" name="access_key" value="e2b616a7-ef3f-4f7f-8c36-e95e7c458b07">
+    <input type="hidden" name="subject" value="New Enquiry — Fraternal Cabins">
+    <input type="hidden" name="from_name" value="Fraternal Website">
+    <input type="checkbox" name="botcheck" style="display:none">
     <div class="cf-row"><div class="fg"><label>Name *</label><input type="text" name="name" placeholder="Your name" autocomplete="name" required aria-label="Your name"></div><div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="e.g. 027 123 4567" autocomplete="tel" inputmode="tel" required aria-label="Phone number"></div></div>
     <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address"></div>
     <div class="fg"><label>What are you looking for?</label><select name="interest" aria-label="What are you looking for"><option value="">Select an option...</option><option>Cabin for myself</option><option>Cabin for a family member</option><option>Rental income property</option><option>Just having a look</option><option>Other</option></select></div>
@@ -529,7 +533,27 @@ function lbxBgClose(e){if(e.target===document.getElementById('lbx'))closeLbx();}
 function lbxStep(d){if(lbxSources.length<2)return;lbxIdx=(lbxIdx+d+lbxSources.length)%lbxSources.length;document.getElementById('lbx-img').src=lbxSources[lbxIdx];}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLbx();if(e.key==='ArrowLeft')lbxStep(-1);if(e.key==='ArrowRight')lbxStep(1);});
 function nlSubmit(){var el=document.getElementById('nlEmail');if(!el.value||!el.value.includes('@')){showToast('Please enter a valid email address.');return;}showToast("You're on the list — we'll be in touch!");el.value='';}
-function cfSubmit(e){e.preventDefault();showToast("Thanks — we'll be in touch within 24 hours!");e.target.reset();}
+function cfSubmit(e){
+  e.preventDefault();
+  var form=e.target;
+  var btn=form.querySelector('button[type="submit"]');
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    body:new FormData(form)
+  }).then(function(r){return r.json();}).then(function(data){
+    if(data.success){
+      showToast("Thanks — we'll be in touch within 24 hours!");
+      form.reset();
+    } else {
+      showToast('Something went wrong. Please call or email us directly.');
+    }
+    if(btn){btn.disabled=false;btn.textContent='Send Message';}
+  }).catch(function(){
+    showToast('Something went wrong. Please call or email us directly.');
+    if(btn){btn.disabled=false;btn.textContent='Send Message';}
+  });
+}
 (function(){
   var fus=document.querySelectorAll('.fu');
   if(window.innerWidth<=920||!('IntersectionObserver' in window)){fus.forEach(function(el){el.classList.add('on');});return;}
