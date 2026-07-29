@@ -529,9 +529,10 @@
     <input type="hidden" name="access_key" value="e2b616a7-ef3f-4f7f-8c36-e95e7c458b07">
     <input type="hidden" name="subject" value="New Enquiry — Fraternal Cabins">
     <input type="hidden" name="from_name" value="Fraternal Website">
+    <input type="hidden" name="replyto" id="replyto_field" value="">
     <input type="checkbox" name="botcheck" style="display:none">
     <div class="cf-row"><div class="fg"><label>Name *</label><input type="text" name="name" placeholder="Your name" autocomplete="name" required aria-label="Your name"></div><div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="e.g. 027 123 4567" autocomplete="tel" inputmode="tel" required aria-label="Phone number"></div></div>
-    <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Email address"></div>
+    <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" oninput="document.getElementById('replyto_field').value=this.value" autocomplete="email" required aria-label="Email address"></div>
     <div class="fg"><label>What are you looking for?</label><select name="interest" aria-label="What are you looking for"><option value="">Select an option...</option><option>Cabin for myself</option><option>Cabin for a family member</option><option>Rental income property</option><option>Just having a look</option><option>Other</option></select></div>
     <div class="fg"><label>Message</label><textarea name="message" aria-label="Your message" placeholder="Tell us about your situation &mdash; location, timeline, any questions..."></textarea></div>
     <div class="fg"><label>How did you hear about us?</label><select><option value="">Select...</option><option>Facebook / Instagram</option><option>Word of mouth</option><option>Google search</option><option>MTF Napier</option><option>Other</option></select></div>
