@@ -212,7 +212,7 @@
     .gallery-upload-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
     #lbx{display:none;position:fixed;inset:0;background:rgba(30,28,26,.97);z-index:2000;align-items:center;justify-content:center}
     .lbx-backdrop{position:absolute;inset:0;z-index:0;cursor:pointer}
-    #lbx img,#lbx .lbx-arrow,#lbx .lbx-close{position:relative;z-index:1}
+    #lbx img{position:relative;z-index:1}#lbx .lbx-close{position:absolute;top:16px;right:16px;z-index:3}
     #lbx.open{display:flex}
     #lbx img{max-width:90vw;max-height:86vh;object-fit:contain;border-radius:4px}
     .lbx-close{position:absolute;top:18px;right:22px;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;opacity:.7;line-height:1}
@@ -479,7 +479,7 @@
   <div class="gal-dyn-grid fu" id="galDynGrid"></div>
   <div class="gallery-upload-row edit-only"><button class="upload-btn" onclick="document.getElementById('galMultiInput').click()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Add Gallery Photos</button><span style="font-size:.72rem;color:var(--slate)">Photos save to your browser automatically</span></div>
 </div></section>
-<div id="lbx"><div class="lbx-backdrop" onclick="closeLbx()"></div><button class="lbx-close" onclick="closeLbx()" aria-label="Close lightbox">&times;</button><button class="lbx-arrow" id="lbx-prev" onclick="lbxStep(-1)" aria-label="Previous image">&#8592;</button><img loading="lazy" id="lbx-img" src="" alt="Gallery image" aria-live="polite"><button class="lbx-arrow" id="lbx-next" onclick="lbxStep(1)" aria-label="Next image">&#8594;</button></div>
+<div id="lbx" onclick="closeLbx()"><button class="lbx-close" onclick="event.stopPropagation();closeLbx()" aria-label="Close lightbox">&times;</button><button class="lbx-arrow" id="lbx-prev" onclick="event.stopPropagation();lbxStep(-1)" aria-label="Previous image">&#8592;</button><img loading="lazy" id="lbx-img" src="" alt="Gallery image" aria-live="polite" onclick="event.stopPropagation()"><button class="lbx-arrow" id="lbx-next" onclick="event.stopPropagation();lbxStep(1)" aria-label="Next image">&#8594;</button></div>
 <section id="about-problem"><div class="wrap"><div class="ap-inner">
   <div class="fu"><h2 class="sh" style="color:var(--bone);margin-bottom:16px">Our Purpose</h2><p class="ap-quote">You've done the maths in your head <em>a hundred times.</em></p></div>
   <div class="ap-body fu"><p>The extra room changes everything &mdash; space for a growing family, a teenager who needs their own four walls, a home office that actually works. We built Fraternal because the existing options weren't good enough: $20,000 up front to buy, or $130 a week renting something that never becomes yours. There's a third way. Weekly payments that build toward ownership &mdash; and when four years are up, the cabin is yours outright, free and clear.</p></div>
@@ -630,6 +630,17 @@ function openLightbox(sources,idx){lbxSources=(sources||[]).filter(function(s){r
 function closeLbx(){document.getElementById('lbx').classList.remove('open');document.body.style.overflow='';}
 function lbxBgClose(e){if(e.target===document.getElementById('lbx'))closeLbx();}
 function lbxStep(d){if(lbxSources.length<2)return;lbxIdx=(lbxIdx+d+lbxSources.length)%lbxSources.length;document.getElementById('lbx-img').src=lbxSources[lbxIdx];}
+document.addEventListener('DOMContentLoaded',function(){
+var lbx=document.getElementById('lbx');
+var sx=0,sy=0;
+lbx.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+lbx.addEventListener('touchend',function(e){
+  var dx=e.changedTouches[0].clientX-sx;
+  var dy=e.changedTouches[0].clientY-sy;
+  if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){lbxStep(dx<0?1:-1);}
+  else if(Math.abs(dx)<10&&Math.abs(dy)<10&&e.target===lbx){closeLbx();}
+},{passive:true});
+});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLbx();if(e.key==='ArrowLeft')lbxStep(-1);if(e.key==='ArrowRight')lbxStep(1);});
 function nlSubmit(){var el=document.getElementById('nlEmail');if(!el.value||!el.value.includes('@')){showToast('Please enter a valid email address.');return;}showToast("You're on the list — we'll be in touch!");el.value='';}
 function cfSubmit(e){
