@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-NZ">
 <head>
-  <link rel="preload" as="image" href="./hero-bg.webp" media="(min-width:769px)" fetchpriority="high">
-  <link rel="preload" as="image" href="./hero-bg-m.webp" media="(max-width:768px)" fetchpriority="high">
   <meta charset="UTF-8">
   <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +15,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-2CDMLX6QBH'); document.addEventListener('DOMContentLoaded',function(){var f=document.querySelector('form.cf');if(f){f.addEventListener('submit',function(){if(typeof gtag==='function'){gtag('event','qualify_lead');}});}});
+    gtag('config', 'G-2CDMLX6QBH');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fraternal — Rent-to-own cabins, built in Hawke's Bay</title>
@@ -105,7 +103,7 @@
     #float-cta.show{opacity:1;transform:translateY(0)}
     #float-cta .btn{box-shadow:0 12px 36px rgba(181,98,59,.55),0 0 0 3px rgba(0,85,184,1),0 0 14px 4px rgba(0,85,184,.4);padding:18px 32px;font-size:1rem;font-weight:700;letter-spacing:.01em}
     #hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:var(--nav-h);overflow:hidden;background:var(--charcoal)}
-    .hero-bg{position:absolute;inset:0;background-image:url('./hero-bg.webp');background-size:cover;background-position:center top;opacity:.52;animation:hzoom 14s ease-out forwards;pointer-events:none}
+    .hero-bg{position:absolute;inset:0;background-image:url('./hero-bg.jpg');background-size:cover;background-position:center top;opacity:.52;animation:hzoom 14s ease-out forwards;pointer-events:none}
     @keyframes hzoom{from{transform:scale(1.06)}to{transform:scale(1)}}
     .hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(45,43,41,.92) 0%,rgba(45,43,41,.55) 55%,rgba(45,43,41,.88) 100%);pointer-events:none}
     .hero-content{position:relative;z-index:2;max-width:700px}
@@ -365,6 +363,60 @@
 .cabin-thumb-btn{background:var(--cedar);border:none;color:#fff;border-radius:5px;width:28px;height:24px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.85;transition:opacity .15s}
 .cabin-thumb-btn:hover{opacity:1}
 .cabin-thumb-btn:disabled{opacity:.3;cursor:default}
+
+  /* ============ SPEC-PROOF ============ */
+  .proof{padding:72px 0;background:var(--bone)}
+  .proof .head{max-width:60ch;margin-bottom:12px}
+  .proof h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:800;margin:10px 0 12px}
+  .proof .sub{color:var(--slate);font-size:1.05rem;max-width:58ch}
+  .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:34px}
+  .spec-card{background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);padding:22px 22px 24px;box-shadow:var(--shadow)}
+  .spec-card .ic{width:38px;height:38px;border-radius:9px;background:var(--stone-light);border:1px solid var(--mist);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .spec-card .ic svg{width:20px;height:20px;stroke:var(--cedar);fill:none;stroke-width:1.8}
+  .spec-card h3{font-size:1rem;font-weight:700;margin-bottom:5px}
+  .spec-card .val{font-family:'Outfit','Segoe UI',sans-serif;font-weight:700;color:var(--cedar-dark);font-size:1.35rem;letter-spacing:-.02em;margin-bottom:6px;line-height:1}
+  .spec-card p{font-size:.88rem;color:var(--slate);line-height:1.5}
+  .proof-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .proof-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--mist);border-radius:100px;padding:9px 16px;font-size:.85rem;font-weight:500;color:var(--ink);box-shadow:var(--shadow)}
+  .proof-badge .tick{width:16px;height:16px;border-radius:50%;background:#4F7A56;flex-shrink:0;position:relative}
+  .proof-badge .tick::after{content:"";position:absolute;left:5px;top:3px;width:4px;height:7px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .builder-bar{display:flex;gap:18px;align-items:center;background:var(--charcoal);color:var(--bone);border-radius:var(--r-lg);padding:24px 28px;margin-top:24px;flex-wrap:wrap}
+  .builder-bar .av{width:52px;height:52px;border-radius:50%;background:var(--cedar);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;flex-shrink:0}
+  .builder-bar .bt{flex:1;min-width:240px}
+  .builder-bar .bt .n{font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem}
+  .builder-bar .bt p{font-size:.9rem;color:rgba(244,237,222,.8);margin-top:3px}
+
+  /* ============ PRE-QUAL ENQUIRY FORM ============ */
+  .enquire-section{padding:72px 0;background:var(--stone)}
+  .enquire-card{background:var(--white);border:1px solid var(--mist);border-radius:20px;box-shadow:0 20px 60px rgba(33,30,27,.10);overflow:hidden;display:grid;grid-template-columns:1fr 1.25fr}
+  .enquire-side{background:linear-gradient(160deg,var(--cedar),var(--cedar-dark));color:#fff;padding:40px 34px}
+  .enquire-side h2{color:#fff;font-size:1.7rem;font-weight:800;margin-bottom:12px}
+  .enquire-side>p{color:rgba(255,255,255,.92);font-size:.98rem;margin-bottom:22px}
+  .enquire-side ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .enquire-side li{display:flex;gap:11px;font-size:.92rem;color:#fff;line-height:1.4}
+  .enquire-side li .et{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.22);flex-shrink:0;position:relative;margin-top:1px}
+  .enquire-side li .et::after{content:"";position:absolute;left:6px;top:4px;width:5px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .enquire-form{padding:36px 34px}
+  .eq-fieldset{display:grid;gap:18px}
+  .eq-field{display:flex;flex-direction:column;gap:7px}
+  .eq-field.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .eq-field label{font-size:.82rem;font-weight:600;color:var(--ink);letter-spacing:.01em}
+  .eq-field label .opt{font-weight:400;color:var(--slate);font-size:.76rem}
+  .eq-field input,.eq-field select,.eq-field textarea{font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--stone-light);border:1px solid var(--mist);border-radius:9px;padding:12px 14px;width:100%;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none}
+  .eq-field input:focus,.eq-field select:focus,.eq-field textarea:focus{outline:none;border-color:var(--cedar);box-shadow:0 0 0 3px rgba(181,98,59,.15)}
+  .eq-field textarea{resize:vertical;min-height:76px}
+  .eq-hint{font-size:.78rem;color:var(--slate);margin-top:-1px}
+  .eq-consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--slate);line-height:1.45}
+  .eq-consent input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--cedar)}
+  .eq-submit{background:var(--cedar);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;border:none;border-radius:10px;padding:15px;cursor:pointer;transition:background .15s;width:100%}
+  .eq-submit:hover{background:var(--cedar-dark)}
+  .eq-foot{font-size:.8rem;color:var(--slate);text-align:center;margin-top:4px}
+  @media(max-width:800px){.enquire-card{grid-template-columns:1fr}.eq-field.row2{grid-template-columns:1fr}}
+  .eq-email-hint{font-size:.76rem;margin-top:3px;min-height:1.1em;line-height:1.4;transition:opacity .2s}
+  .eq-hint-suggest{color:var(--cedar)}
+  .eq-hint-suggest a{color:var(--cedar);text-decoration:underline;font-weight:600;cursor:pointer}
+  .eq-hint-warn{color:#b45309}
+  .eq-hint-ok{color:#4F7A56}
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Fraternal","description":"Rent-to-own cabins built by hand in Hawke's Bay. From $130/week, no council consent, yours at the end.","url":"https://www.fraternal.co.nz","telephone":"+64273580914","email":"fraternalltd@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Hastings","addressRegion":"Hawke's Bay","addressCountry":"NZ"},"geo":{"@type":"GeoCoordinates","latitude":-39.6386,"longitude":176.8349},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"},"priceRange":"$130/week","currenciesAccepted":"NZD","paymentAccepted":"Finance via MTF Napier","areaServed":["Napier","Hastings","Central Hawke's Bay","Wairoa"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Rent-to-own Cabins","itemListElement":[{"@type":"Offer","name":"The Standard Cabin","price":"20000","priceCurrency":"NZD","description":"8.64m² cedar weatherboard sleepout, consent-exempt, EWOF certified"}]}}</script>
 <script>
@@ -385,7 +437,6 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','998082749880722');fbq('track','PageView');</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=998082749880722&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->
-<style>@media(max-width:768px){.hero-bg{background-image:url('./hero-bg-m.webp')}}</style>
 </head>
 <div class="pl-bar-wrap"><div class="pl-bar" id="pl-bar"></div></div>
 </div>
@@ -432,9 +483,9 @@
   <div class="cabin-section-hd fu"><div class="cabin-section-title">Our Cabins</div></div>
   <div class="cabin-grid">
     <div class="fu">
-      <div class="img-main" id="cabinMainSlot" style="aspect-ratio:4/3;overflow:hidden" onclick="openLightbox(CABIN_DEFAULTS,cabinActiveIdx)"><img id="cabinMainImg" fetchpriority="high" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover" src="./cabin-0.webp" alt="Cabin exterior"></div>
+      <div class="img-main" id="cabinMainSlot" style="aspect-ratio:4/3;overflow:hidden" onclick="openLightbox(CABIN_DEFAULTS,cabinActiveIdx)"><img id="cabinMainImg" fetchpriority="high" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover" src="./cabin-0.jpg" alt="Cabin exterior"></div>
       <div class="cabin-empty-state" id="cabinEmptyState"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--mist)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 4-4 4 4 4-4 4 4"/><circle cx="8.5" cy="13.5" r="1.5"/></svg><p style="font-size:.85rem;margin-top:4px">Upload photos to display your cabin</p></div>
-      <div class="cabin-drag-grid" id="cabinDragGrid"><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(0)"><img src="./cabin-0.webp" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)" disabled>&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(1)"><img src="./cabin-0.webp" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(2)"><img src="./cabin-0.webp" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(3)"><img src="./cabin-0.webp" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(4)"><img src="./cabin-0.webp" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(5)"><img src="./cabin-0.webp" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)" disabled>&#8594;</button></div></div></div>
+      <div class="cabin-drag-grid" id="cabinDragGrid"><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(0)"><img src="./cabin-0.jpg" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)" disabled>&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(1)"><img src="./cabin-0.jpg" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(2)"><img src="./cabin-0.jpg" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(3)"><img src="./cabin-0.jpg" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(4)"><img src="./cabin-0.jpg" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)">&#8594;</button></div></div><div class="cabin-drag-item"><div class="cabin-di-img" onclick="setCabinMain(5)"><img src="./cabin-0.jpg" alt="Cabin" style="width:100%;height:100%;object-fit:cover;display:block"></div><div class="cabin-thumb-controls"><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,-1)">&#8592;</button><button class="cabin-thumb-btn" onclick="event.stopPropagation();moveCabinThumb(this,1)" disabled>&#8594;</button></div></div></div>
       <p class="drag-hint-text edit-only" id="cabinDragHint">Drag to reorder &middot; &#8592; &#8594; to move &middot; &times; to delete</p>
       <div class="cabin-upload-row edit-only" style="margin-top:12px"><button class="upload-btn" onclick="document.getElementById('cabinMultiInput').click()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Upload Cabin Photos</button><span class="cabin-upload-hint">First photo becomes the main image</span></div>
     </div>
@@ -442,7 +493,7 @@
       <div class="stock-pill">3 Available &mdash; Ready to Deliver</div>
       <h2>The Standard</h2>
       <div class="price-row"><span class="price-main"><small style="font-size:1rem;font-weight:600;vertical-align:middle">Up to </small>$130<small style="font-size:1.15rem;font-weight:700">/wk</small></span><span class="price-alt">or $20,000 outright</span></div>
-      <div class="specs"><div class="spec"><span class="spec-l">Floor Area</span><span class="spec-v">8.64 m&sup2; (3.6 &times; 2.4m)</span></div><div class="spec"><span class="spec-l">Delivery</span><span class="spec-v">One Day</span></div><div class="spec"><span class="spec-l">Cladding</span><span class="spec-v">Cedar + Colorsteel</span></div><div class="spec"><span class="spec-l">Council Consent</span><span class="spec-v">Not Required</span></div></div>
+      <div class="specs"><div class="spec"><span class="spec-l">Floor Area</span><span class="spec-v">8.64 m&sup2; (3.6m &times; 2.4m)</span></div><div class="spec"><span class="spec-l">Delivery</span><span class="spec-v">One Day</span></div><div class="spec"><span class="spec-l">Cladding</span><span class="spec-v">Cedar + Colorsteel</span></div><div class="spec"><span class="spec-l">Council Consent</span><span class="spec-v">Not Required</span></div></div>
       <ul class="feat-list"><li>Hand-built cedar weatherboard with Colorsteel cladding &amp; mono-pitch roof</li><li>Full insulation &mdash; R1.8 walls, R2.6 ceiling (Healthy Homes compliant)</li><li>Double-glazed aluminium joinery &mdash; window + sliding door</li><li>Warm stained ply interior with laminate flooring</li><li>LED lighting, switchboard &amp; plug-in main power lead</li><li>EWOF certified before delivery &middot; 12-month structural warranty</li></ul>
       <div class="cabin-ctas"><a href="#contact" class="btn btn-black">Book a Viewing</a><a href="https://apply.mtf.co.nz/?originatorid=2173" target="_blank" rel="noopener noreferrer" class="btn btn-cedar">Get Finance</a></div>
     </div>
@@ -494,7 +545,7 @@
 </div></div></section>
 <section id="gallery" class="tight"><div class="wrap">
   <div class="gallery-hd fu"><div class="gallery-title">Gallery</div></div>
-  <div class="gal-dyn-grid fu" id="galDynGrid"><div class="gal-dyn-item wide"><div class="gal-di-img"><img src="./gal-0.webp" alt="Gallery" loading="lazy"></div></div><div class="gal-dyn-item"><div class="gal-di-img"><img src="./gal-1.webp" alt="Gallery" loading="lazy"></div></div><div class="gal-dyn-item"><div class="gal-di-img"><img src="./gal-2.webp" alt="Gallery" loading="lazy"></div></div><div class="gal-dyn-item"><div class="gal-di-img"><img src="./gal-3.webp" alt="Gallery" loading="lazy"></div></div></div>
+  <div class="gal-dyn-grid fu" id="galDynGrid"><div class="gal-dyn-item wide"><div class="gal-di-img"><img src="./gal-0.jpg" alt="Gallery" loading="lazy"></div></div><div class="gal-dyn-item"><div class="gal-di-img"><img src="./gal-1.jpg" alt="Gallery" loading="lazy"></div></div><div class="gal-dyn-item"><div class="gal-di-img"><img src="./gal-2.jpg" alt="Gallery" loading="lazy"></div></div><div class="gal-dyn-item"><div class="gal-di-img"><img src="./gal-3.jpg" alt="Gallery" loading="lazy"></div></div></div>
   <div class="gallery-upload-row edit-only"><button class="upload-btn" onclick="document.getElementById('galMultiInput').click()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Add Gallery Photos</button><span style="font-size:.72rem;color:var(--slate)">Photos save to your browser automatically</span></div>
 </div></section>
 <div id="lbx" onclick="closeLbx()"><button class="lbx-close" id="lbx-close-btn" onclick="event.stopPropagation();closeLbx()" aria-label="Close lightbox">&times;</button><button class="lbx-arrow" id="lbx-prev" onclick="event.stopPropagation();lbxStep(-1)" aria-label="Previous image">&#8592;</button><img loading="lazy" decoding="async" id="lbx-img" src="" alt="Gallery image" aria-live="polite" onclick="event.stopPropagation()"><button class="lbx-arrow" id="lbx-next" onclick="event.stopPropagation();lbxStep(1)" aria-label="Next image">&#8594;</button></div>
@@ -505,13 +556,13 @@
 <section id="about"><div class="wrap"><div class="about-grid">
   <div class="team-cards fu">
     <div class="team-member">
-      <div class="tm-photo" id="aboutImgSlot"><img id="aboutImgEl" src="./about.webp" alt="Tipene Douglas"></div>
+      <div class="tm-photo" id="aboutImgSlot"><img id="aboutImgEl" src="./about.jpg" alt="Tipene Douglas"></div>
       <div class="tm-empty" id="aboutImgEmpty" style="display:none"><svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--mist)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 4-4 4 4 4-4 4 4"/><circle cx="8.5" cy="13.5" r="1.5"/></svg><p>Upload photo</p></div>
       <div class="tm-upload-row edit-only"><button class="upload-btn" onclick="document.getElementById('aboutImgInput').click()"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Upload</button></div>
       <div class="tm-info"><strong>Tipene Douglas</strong><span class="tm-role">Builder &amp; Co-Founder</span><span class="tm-sub">8 years&rsquo; carpentry experience</span></div>
     </div>
     <div class="team-member">
-      <div class="tm-photo" id="about2ImgSlot"><img id="about2ImgEl" src="./about2.webp" alt="Tihema Douglas"></div>
+      <div class="tm-photo" id="about2ImgSlot"><img id="about2ImgEl" src="./about2.jpg" alt="Tihema Douglas"></div>
       <div class="tm-empty" id="about2ImgEmpty" style="display:none"><svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--mist)"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 4-4 4 4 4-4 4 4"/><circle cx="8.5" cy="13.5" r="1.5"/></svg><p>Upload photo</p></div>
       <div class="tm-upload-row edit-only"><button class="upload-btn" onclick="document.getElementById('about2ImgInput').click()"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Upload</button></div>
       <div class="tm-info"><strong>Tihema Douglas</strong><span class="tm-role">Co-Founder</span></div>
@@ -563,20 +614,83 @@
     <div class="socials"><a href="#" class="soc-link"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="#" class="soc-link"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a></div>
     <p class="soc-note">@fraternalcabins &mdash; pages launching soon</p>
   </div>
-  <div class="fu"><form class="cf" onsubmit="cfSubmit(event)">
-    <input type="hidden" name="access_key" value="e2b616a7-ef3f-4f7f-8c36-e95e7c458b07">
-    <input type="hidden" name="subject" value="New Enquiry — Fraternal Cabins">
-    <input type="hidden" name="from_name" value="Fraternal Website">
-    <input type="hidden" name="replyto" id="replyto_field" value="">
-    <input type="checkbox" name="botcheck" style="display:none">
-    <div class="cf-row"><div class="fg"><label>Name *</label><input type="text" name="name" placeholder="Your name" autocomplete="name" required aria-label="Your name"></div><div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="e.g. 027 123 4567" autocomplete="tel" inputmode="tel" required aria-label="Phone number"></div></div>
-    <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="you@email.com" oninput="document.getElementById('replyto_field').value=this.value" autocomplete="email" required aria-label="Email address"></div>
-    <div class="fg"><label>What are you looking for?</label><select name="interest" aria-label="What are you looking for"><option value="">Select an option...</option><option>Cabin for myself</option><option>Cabin for a family member</option><option>Rental income property</option><option>Just having a look</option><option>Other</option></select></div>
-    <div class="fg"><label>Message</label><textarea name="message" aria-label="Your message" placeholder="Tell us about your situation &mdash; location, timeline, any questions..."></textarea></div>
-    <div class="fg"><label>How did you hear about us?</label><select><option value="">Select...</option><option>Facebook / Instagram</option><option>Word of mouth</option><option>Google search</option><option>MTF Napier</option><option>Other</option></select></div>
-    <div class="cf-submit"><button type="submit" class="btn btn-cedar">Send Enquiry &rarr;</button></div>
-    <p class="cf-note">We reply within 24 hours (Mon&ndash;Fri)</p>
-  </form></div>
+  <div class="fu">
+  <form class="enquire-form" onsubmit="eqSubmit(event)" style="background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);box-shadow:var(--shadow)">
+        <input type="hidden" name="access_key" value="e2b616a7-ef3f-4f7f-8c36-e95e7c458b07">
+        <input type="hidden" name="subject" value="New Enquiry — Fraternal Cabins">
+        <input type="hidden" name="from_name" value="Fraternal Website">
+        <input type="hidden" name="replyto" id="replyto_field" value="">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <div class="eq-fieldset">
+          <div class="eq-field row2">
+            <div class="eq-field">
+              <label for="eq-name">Your name</label>
+              <input id="eq-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="eq-field">
+              <label for="eq-contact">Phone or email</label>
+              <input id="eq-contact" name="contact" type="text" autocomplete="email" oninput="document.getElementById('replyto_field').value=this.value" required>
+              <div id="eq-email-hint" class="eq-email-hint"></div>
+            </div>
+          </div>
+          <div class="eq-field">
+            <label for="eq-location">Where would the cabin go? <span class="opt">(town / suburb)</span></label>
+            <input id="eq-location" name="location" type="text" placeholder="e.g. Havelock North, Puketapu, Hastings" required>
+            <span class="eq-hint">We build &amp; deliver across Hawke's Bay.</span>
+          </div>
+          <div class="eq-field">
+            <label for="eq-land">Do you own the land it'll go on?</label>
+            <select id="eq-land" name="land_ownership" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option value="own">Yes — I own the section</option>
+              <option value="family">It'd go on family land</option>
+              <option value="renting">I'm renting / not sure yet</option>
+            </select>
+          </div>
+          <div class="eq-field">
+            <label for="eq-use">What's it for?</label>
+            <select id="eq-use" name="use_case" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option value="adult-child">Space for an adult child at home</option>
+              <option value="family-teen">Extra room for the family / a teen</option>
+              <option value="guest-parent">Guest room / room for a parent</option>
+              <option value="office">Home office / studio</option>
+              <option value="income">Side income / rental on my block</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="eq-field">
+            <label for="eq-weekly">Roughly what weekly payment works for you?</label>
+            <select id="eq-weekly" name="weekly_budget" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option value="u100">Under $100/week</option>
+              <option value="100-140">$100–$140/week</option>
+              <option value="140-170">$140–$170/week</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="eq-field">
+            <label for="eq-timeline">When are you hoping to have it in place?</label>
+            <select id="eq-timeline" name="timeline" required>
+              <option value="" disabled selected>Choose one…</option>
+              <option value="asap">As soon as possible</option>
+              <option value="1-3m">In the next 1–3 months</option>
+              <option value="researching">Just researching for now</option>
+            </select>
+          </div>
+          <div class="eq-field">
+            <label for="eq-notes">Anything else or any questions? <span class="opt">(optional)</span></label>
+            <textarea id="eq-notes" name="notes" placeholder="Tell us about your site, size, or anything you're wondering about…"></textarea>
+          </div>
+          <label class="eq-consent">
+            <input type="checkbox" name="consent" required>
+            <span>I'm happy for Fraternal to contact me about my enquiry. We'll never share your details.</span>
+          </label>
+          <button class="eq-submit" type="submit">Send my enquiry</button>
+          <p class="eq-foot">No obligation — just a real conversation with a local builder.</p>
+        </div>
+      </form>
+  </div>
 </div></div></section>
 <footer><div class="wrap">
   <div class="foot-top">
@@ -610,7 +724,7 @@ function applyAbout2Img(src){document.getElementById('about2ImgEl').src=src;docu
 function changeAbout2Img(input){if(!input.files[0])return;readFileCompressed(input.files[0]).then(function(src){applyAbout2Img(src);try{localStorage.setItem('frat_about2',src);}catch(e){}showToast('Photo saved');});input.value='';}
 function removeAbout2Img(){document.getElementById('about2ImgEl').src='';document.getElementById('about2ImgSlot').style.display='none';document.getElementById('about2ImgEmpty').style.display='';var _rb2=document.getElementById('about2ImgRemoveBtn');if(_rb2)_rb2.style.display='none';try{localStorage.removeItem('frat_about2');}catch(e){}showToast('Photo removed');}
 function loadSaved(){try{var cab=localStorage.getItem('frat_cabin_v3');if(cab){var arr=JSON.parse(cab);if(arr&&arr.length){cabinPhotos=arr;cabinDefaultsActive=false;}}var gal=localStorage.getItem('frat_gal_v3');if(gal){var garr=JSON.parse(gal);if(garr&&garr.length){galPhotos=garr;}}var a1=localStorage.getItem('frat_about');if(a1){applyAboutImg(a1);}var a2=localStorage.getItem('frat_about2');if(a2){applyAbout2Img(a2);}}catch(e){}}
-var CABIN_DEFAULTS=['./cabin-0.webp','./cabin-1.webp','./cabin-2.webp','./cabin-3.webp','./cabin-4.webp','./cabin-5.webp'];
+var CABIN_DEFAULTS=['./cabin-0.jpg','./cabin-1.jpg','./cabin-2.jpg','./cabin-3.jpg','./cabin-4.jpg','./cabin-5.jpg'];
 var cabinPhotos=CABIN_DEFAULTS.slice(),cabinDefaultsActive=true,cabinDragSrc=null;
 async function addCabinPhotos(input){if(!input.files.length)return;var isFirst=cabinDefaultsActive;if(isFirst){cabinPhotos=[];cabinDefaultsActive=false;}showToast('Processing...');var files=Array.from(input.files);for(var i=0;i<files.length;i++){cabinPhotos.push(await readFileCompressed(files[i]));}input.value='';renderCabinGrid();if(!trySave('frat_cabin_v3',cabinPhotos)){showToast('Could not save — photos too large');return;}showToast('Saved');}
 function renderCabinGrid(){var ms=document.getElementById('cabinMainSlot'),es=document.getElementById('cabinEmptyState'),dg=document.getElementById('cabinDragGrid'),hint=document.getElementById('cabinDragHint');if(!cabinPhotos.length){ms.style.display='none';es.style.display='flex';dg.innerHTML='';hint.style.display='none';return;}ms.style.display='';es.style.display='none';document.getElementById('cabinMainImg').src=cabinPhotos[0];dg.innerHTML='';
@@ -618,18 +732,22 @@ function renderCabinGrid(){var ms=document.getElementById('cabinMainSlot'),es=do
 var cabinActiveIdx=0;function setCabinMain(idx){cabinActiveIdx=idx;var img=document.getElementById('cabinMainImg');if(img)img.src=CABIN_DEFAULTS[idx];document.querySelectorAll('.cabin-drag-item').forEach(function(el,j){el.classList.toggle('cabin-active',j===idx);});}
 function moveCabin(idx,dir){var ni=idx+dir;if(ni<0||ni>=cabinPhotos.length)return;var tmp=cabinPhotos[idx];cabinPhotos[idx]=cabinPhotos[ni];cabinPhotos[ni]=tmp;renderCabinGrid();trySave('frat_cabin_v3',cabinPhotos);}
 function deleteCabin(idx){cabinPhotos.splice(idx,1);renderCabinGrid();trySave('frat_cabin_v3',cabinPhotos);}
-var GAL_DEFAULTS=['./gal-0.webp','./gal-1.webp','./gal-2.webp','./gal-3.webp'];var galPhotos=GAL_DEFAULTS.slice(),galDragSrc=null;
+var GAL_DEFAULTS=['./gal-0.jpg','./gal-1.jpg','./gal-2.jpg','./gal-3.jpg'];var galPhotos=GAL_DEFAULTS.slice(),galDragSrc=null;
 async function addGalleryPhotos(input){if(!input.files.length)return;showToast('Processing...');var files=Array.from(input.files);for(var i=0;i<files.length;i++){galPhotos.push(await readFileCompressed(files[i]));}input.value='';renderGalGrid();if(!trySave('frat_gal_v3',galPhotos)){showToast('Could not save');return;}showToast('Saved');}
 function renderGalGrid(){var grid=document.getElementById('galDynGrid');grid.innerHTML='';if(!galPhotos.length){var empty=document.createElement('div');empty.className='gal-empty-state';empty.innerHTML='<svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="color:var(--mist);margin:0 auto 12px"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 9 4-4 4 4 4-4 4 4"/><circle cx="8.5" cy="13.5" r="1.5"/></svg><p>Upload photos to fill your gallery</p>';grid.appendChild(empty);return;}var _galLoaded=false;
   function _loadAllGal(){if(_galLoaded)return;_galLoaded=true;
-    galPhotos.slice(3).forEach(function(src,j){var i=j+3;var isWide=false,isFull=false;
+    var _snap=galPhotos.slice();
+    galPhotos.slice(3).forEach(function(src,j){var i=j+3;
     var item=document.createElement('div');item.className='gal-dyn-item';item.draggable=EDIT_MODE;
+    var wrap=document.createElement('div');wrap.className='gal-di-img';
     var img=document.createElement('img');img.src=src;img.alt='Gallery';img.loading='lazy';img.style.cssText='width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit';
-    item.appendChild(img);grid.appendChild(item);});}
+    img.addEventListener('click',function(e){e.stopPropagation();openLightbox(_snap,i);});
+    wrap.appendChild(img);item.appendChild(wrap);grid.appendChild(item);});}
   if(typeof IntersectionObserver!=='undefined'){
     var _galObs=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){_loadAllGal();_galObs.disconnect();}},{rootMargin:'200px'});
     _galObs.observe(grid);}else{_loadAllGal();}
-  galPhotos.slice(0,3).forEach(function(src,i){var isWide=i===0&&galPhotos.length>=2,isFull=i===0&&galPhotos.length===1;var item=document.createElement('div');item.className='gal-dyn-item'+(isWide?' wide':'')+(isFull?' full-w':'');item.draggable=EDIT_MODE;var la=i>0?'<button class="drag-arrow-btn" onclick="event.stopPropagation();moveGal('+i+',-1)">&#8592;</button>':'<span style="width:26px;display:inline-block"></span>';var ra=i<galPhotos.length-1?'<button class="drag-arrow-btn" onclick="event.stopPropagation();moveGal('+i+',1)">&#8594;</button>':'<span style="width:26px;display:inline-block"></span>';item.innerHTML='<div class="gal-di-img"><img src="'+src+'" alt="Gallery" loading="lazy"></div>'+(EDIT_MODE&&galPhotos.length>1?'<div class="di-controls" style="margin-top:4px">'+la+ra+'</div>':'');item.querySelector('img').addEventListener('click',function(e){e.stopPropagation();openLightbox(galPhotos,i);});item.addEventListener('dragstart',function(e){galDragSrc=i;e.dataTransfer.effectAllowed='move';setTimeout(function(){item.classList.add('is-dragging');},0);});item.addEventListener('dragover',function(e){e.preventDefault();item.classList.add('drag-over');});item.addEventListener('dragleave',function(){item.classList.remove('drag-over');});item.addEventListener('drop',function(e){e.preventDefault();item.classList.remove('drag-over');if(galDragSrc===null||galDragSrc===i)return;var tmp=galPhotos[galDragSrc];galPhotos[galDragSrc]=galPhotos[i];galPhotos[i]=tmp;galDragSrc=null;renderGalGrid();trySave('frat_gal_v3',galPhotos);});item.addEventListener('dragend',function(){item.classList.remove('is-dragging','drag-over');galDragSrc=null;});grid.appendChild(item);});}
+  var _galSnap=galPhotos.slice();
+  galPhotos.slice(0,3).forEach(function(src,i){var isWide=i===0&&galPhotos.length>=2,isFull=i===0&&galPhotos.length===1;var item=document.createElement('div');item.className='gal-dyn-item'+(isWide?' wide':'')+(isFull?' full-w':'');item.draggable=EDIT_MODE;var la=i>0?'<button class="drag-arrow-btn" onclick="event.stopPropagation();moveGal('+i+',-1)">&#8592;</button>':'<span style="width:26px;display:inline-block"></span>';var ra=i<galPhotos.length-1?'<button class="drag-arrow-btn" onclick="event.stopPropagation();moveGal('+i+',1)">&#8594;</button>':'<span style="width:26px;display:inline-block"></span>';item.innerHTML='<div class="gal-di-img"><img src="'+src+'" alt="Gallery" loading="lazy"></div>'+(EDIT_MODE&&galPhotos.length>1?'<div class="di-controls" style="margin-top:4px">'+la+ra+'</div>':'');item.querySelector('img').addEventListener('click',function(e){e.stopPropagation();openLightbox(_galSnap,i);});item.addEventListener('dragstart',function(e){galDragSrc=i;e.dataTransfer.effectAllowed='move';setTimeout(function(){item.classList.add('is-dragging');},0);});item.addEventListener('dragover',function(e){e.preventDefault();item.classList.add('drag-over');});item.addEventListener('dragleave',function(){item.classList.remove('drag-over');});item.addEventListener('drop',function(e){e.preventDefault();item.classList.remove('drag-over');if(galDragSrc===null||galDragSrc===i)return;var tmp=galPhotos[galDragSrc];galPhotos[galDragSrc]=galPhotos[i];galPhotos[i]=tmp;galDragSrc=null;renderGalGrid();trySave('frat_gal_v3',galPhotos);});item.addEventListener('dragend',function(){item.classList.remove('is-dragging','drag-over');galDragSrc=null;});grid.appendChild(item);});}
 function moveGal(idx,dir){var ni=idx+dir;if(ni<0||ni>=galPhotos.length)return;var tmp=galPhotos[idx];galPhotos[idx]=galPhotos[ni];galPhotos[ni]=tmp;renderGalGrid();trySave('frat_gal_v3',galPhotos);}
 function deleteGal(idx){galPhotos.splice(idx,1);renderGalGrid();trySave('frat_gal_v3',galPhotos);}
 var lbxSources=[],lbxIdx=0;
@@ -656,8 +774,6 @@ function lbxStep(d){
   var prev=document.getElementById('lbx-prev');
   var next=document.getElementById('lbx-next');
   closeBtn.addEventListener('click',function(e){e.stopPropagation();closeLbx();});
-  prev.addEventListener('click',function(e){e.stopPropagation();lbxStep(-1);});
-  next.addEventListener('click',function(e){e.stopPropagation();lbxStep(1);});
   lbx.addEventListener('click',function(e){if(e.target===lbx)closeLbx();});
   document.addEventListener('keydown',function(e){
     if(!document.getElementById('lbx').classList.contains('open'))return;
@@ -697,6 +813,28 @@ function cfSubmit(e){
     if(btn){btn.disabled=false;btn.textContent='Send Message';}
   });
 }
+function eqSubmit(e){
+  e.preventDefault();
+  var form=e.target;
+  var btn=form.querySelector('button[type="submit"]');
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    body:new FormData(form)
+  }).then(function(r){return r.json();}).then(function(data){
+    if(data.success){
+      if(typeof fbq==='function')fbq('track','Lead');
+      showToast("Thanks — we'll be in touch shortly!");
+      form.reset();
+    } else {
+      showToast('Something went wrong. Please call or email us directly.');
+    }
+    if(btn){btn.disabled=false;btn.textContent='Send my enquiry';}
+  }).catch(function(){
+    showToast('Something went wrong. Please call or email us directly.');
+    if(btn){btn.disabled=false;btn.textContent='Send my enquiry';}
+  });
+}
 (function(){
   var fus=document.querySelectorAll('.fu');
   if(window.innerWidth<=920||!('IntersectionObserver' in window)){fus.forEach(function(el){el.classList.add('on');});return;}
@@ -704,8 +842,8 @@ function cfSubmit(e){
   fus.forEach(function(el){obs.observe(el);});
   setTimeout(function(){document.querySelectorAll('.fu:not(.on)').forEach(function(el){el.classList.add('on');});},800);
 })();
-var ABOUT_DEFAULT='./about.webp';
-var ABOUT2_DEFAULT='./about2.webp';calcPay();if(ABOUT_DEFAULT){applyAboutImg(ABOUT_DEFAULT);}if(ABOUT2_DEFAULT){applyAbout2Img(ABOUT2_DEFAULT);}loadSaved();renderCabinGrid();renderGalGrid();loadCabinCustom();
+var ABOUT_DEFAULT='./about.jpg';
+var ABOUT2_DEFAULT='./about2.jpg';calcPay();if(ABOUT_DEFAULT){applyAboutImg(ABOUT_DEFAULT);}if(ABOUT2_DEFAULT){applyAbout2Img(ABOUT2_DEFAULT);}loadSaved();renderCabinGrid();renderGalGrid();loadCabinCustom();
 /* Nav active state on scroll */
 (function(){
   var sections=['cabins','amenities','finance','gallery','about-problem','faq','contact'];
@@ -935,5 +1073,76 @@ if(window.location.hash==='#privacy'){window.addEventListener('load',function(){
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mailcheck/1.1.2/mailcheck.min.js" defer></script>
+<script>
+(function(){
+  var field=document.getElementById('eq-contact');
+  var hint=document.getElementById('eq-email-hint');
+  if(!field||!hint)return;
+
+  function isEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());}
+
+  function setHint(msg,type){
+    hint.innerHTML=msg;
+    hint.className='eq-email-hint'+(type?' eq-hint-'+type:'');
+  }
+
+  function showSuggestion(s){
+    setHint('Did you mean <a id="eq-fix-link">'+s.full+'</a>?','suggest');
+    document.getElementById('eq-fix-link').addEventListener('click',function(e){
+      e.preventDefault();
+      field.value=s.full;
+      document.getElementById('replyto_field').value=s.full;
+      setHint('','');
+      checkDomain(s.domain);
+    });
+  }
+
+  function checkDomain(domain){
+    setHint('','');
+    fetch('https://dns.google/resolve?name='+encodeURIComponent(domain)+'&type=MX')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(d.Status===0&&d.Answer&&d.Answer.length){
+          setHint('',''); // domain is fine — say nothing
+        } else {
+          // Fallback: check A record — domain may exist but use implicit MX
+          return fetch('https://dns.google/resolve?name='+encodeURIComponent(domain)+'&type=A')
+            .then(function(r2){return r2.json();})
+            .then(function(d2){
+              if(d2.Status===0&&d2.Answer&&d2.Answer.length){
+                setHint('⚠ This domain may not accept email — double-check your address','warn');
+              } else {
+                setHint('⚠ "'+domain+'" doesn\'t look like a valid email domain — please check','warn');
+              }
+            });
+        }
+      })
+      .catch(function(){setHint('','');});
+  }
+
+  function runMailcheck(val,onEmpty){
+    if(typeof Mailcheck==='undefined'){if(onEmpty)onEmpty();return;}
+    Mailcheck.run({email:val,suggested:showSuggestion,empty:onEmpty||function(){}});
+  }
+
+  var _timer;
+  field.addEventListener('input',function(){
+    var val=this.value.trim();
+    clearTimeout(_timer);
+    setHint('','');
+    if(!isEmail(val))return;
+    _timer=setTimeout(function(){runMailcheck(val,null);},900);
+  });
+
+  field.addEventListener('blur',function(){
+    var val=this.value.trim();
+    clearTimeout(_timer);
+    if(!isEmail(val)){setHint('','');return;}
+    var domain=val.split('@')[1];
+    runMailcheck(val,function(){checkDomain(domain);});
+  });
+})();
+</script>
 </body>
 </html>
