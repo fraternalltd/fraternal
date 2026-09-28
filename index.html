@@ -5,6 +5,7 @@
   <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://connect.facebook.net">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
@@ -103,8 +104,7 @@
     #float-cta.show{opacity:1;transform:translateY(0)}
     #float-cta .btn{box-shadow:0 12px 36px rgba(181,98,59,.55),0 0 0 3px rgba(0,85,184,1),0 0 14px 4px rgba(0,85,184,.4);padding:18px 32px;font-size:1rem;font-weight:700;letter-spacing:.01em}
     #hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:var(--nav-h);overflow:hidden;background:var(--charcoal)}
-    .hero-bg{position:absolute;inset:0;background-image:url('./hero-bg.jpg');background-size:cover;background-position:center top;opacity:.52;animation:hzoom 14s ease-out forwards;pointer-events:none}
-    @keyframes hzoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+    .hero-bg{position:absolute;inset:0;background-image:url('./hero-bg.jpg');background-size:cover;background-position:center top;opacity:.72;transform:scale(1);pointer-events:none}
     .hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(45,43,41,.92) 0%,rgba(45,43,41,.55) 55%,rgba(45,43,41,.88) 100%);pointer-events:none}
     .hero-content{position:relative;z-index:2;max-width:700px}
     .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--cedar);color:var(--bone);padding:8px 16px;border-radius:100px;font-size:.77rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;font-family:'Outfit','Segoe UI',-apple-system,BlinkMacSystemFont,sans-serif}
@@ -113,7 +113,8 @@
     #hero h1{color:#fff;margin-bottom:16px}
     .hero-location{font-family:'Outfit','Segoe UI',-apple-system,sans-serif;font-size:3rem;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}
     .hero-own{color:rgba(255,255,255,.88);font-size:1.05rem;line-height:1.75;margin-bottom:36px;font-weight:400;max-width:560px}
-    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+    .hero-own strong{font-weight:900;color:#fff;}
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;margin-top:24px}
     .hero-btns .btn{padding:16px 32px;font-size:1rem;}
     .hero-stats{display:flex;gap:0;flex-wrap:wrap;background:rgba(30,28,26,.48);border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
     .hstat{flex:1;min-width:130px;padding:18px 24px;border-right:1px solid rgba(255,255,255,.08)}
@@ -468,7 +469,7 @@
   <div class="wrap"><div class="hero-content">
     <div class="hero-pill"><span class="hero-pill-dot"></span>3 Cabins Available Now</div>
     <h2 class="hero-location">Hawke's Bay</h2>
-    <p class="hero-own"><strong>Fraternal</strong> is a local business. You'll meet the qualified carpenter who builds and inspects your cabin. A $20,000 deposit is beyond most, and rent at around $130 a week leaves you owning nothing. That's the gap we exist to close, using finance to turn a manageable weekly payment into a space that's yours.</p>
+    <p class="hero-own" style="font-family:'Nunito',sans-serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-weight:400;text-transform:none;letter-spacing:.01em;line-height:1.25">Need extra <strong>Living Space</strong> on your land? <strong>Own</strong> your cabin from an affordable weekly payment or purchase outright</p>
     <div class="hero-btns"><a href="#cabins" class="btn btn-cedar">Our Cabins</a><a href="#finance" class="btn btn-hero-sec">See Weekly Payments</a></div>
 
   </div></div>
