@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leave a Review | Fraternal Cabins</title>
+<meta name="description" content="Tell us about your Fraternal cabin experience.">
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4EDDE; --card:#FFFFFF; --ink:#1E1C1A; --muted:#6B6A64;
+    --brand:#B5623B; --brand-dark:#8A4A2C; --brand-2:#B5623B; --line:#E7DECC; --star:#D4875E; --charcoal:#2D2B29;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  .topbar{background:var(--charcoal);padding:14px 18px}
+  .topbar .in{max-width:640px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+  .logo-lockup{display:inline-flex;align-items:center;gap:12px;text-decoration:none;line-height:1}
+  .logo-icon{color:var(--brand)}
+  .logo-text{display:flex;flex-direction:column;gap:4px}
+  .logo-name{font-family:Outfit,sans-serif;font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:.3px}
+  .logo-rule-el{display:block;height:1.5px;background:var(--brand);width:100%}
+  .logo-desc{font-size:.52rem;font-weight:500;letter-spacing:.22em;color:rgba(255,255,255,.45);text-transform:uppercase}
+  .back{color:rgba(255,255,255,.7);font-size:14px;text-decoration:none}
+  .back:hover{color:#fff}
+  .wrap{max-width:640px;margin:0 auto;padding:32px 18px 60px}
+  header{text-align:center;margin-bottom:24px}
+  .logo{font-weight:700;letter-spacing:.18em;font-size:14px;color:var(--brand-2);text-transform:uppercase}
+  h1{font-family:Outfit,Inter,sans-serif;font-size:30px;font-weight:600;margin:0 0 8px;color:var(--ink)}
+  header p{color:var(--muted);margin:0}
+  form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+  fieldset{border:0;padding:0;margin:0 0 26px}
+  legend{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-2);margin-bottom:12px}
+  label{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+  .hint{font-weight:400;color:var(--muted);font-size:13px}
+  input[type=text],input[type=email],select,textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fcfbf9}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);border-color:var(--brand)}
+  textarea{min-height:130px;resize:vertical}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.row{grid-template-columns:1fr}}
+  .rate{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .rate:last-child{border-bottom:0}
+  .rate span{font-size:15px;font-weight:500}
+  .stars{display:flex;flex-direction:row-reverse;gap:2px}
+  .stars input{position:absolute;opacity:0;width:1px;height:1px}
+  .stars label{margin:0;font-size:28px;line-height:1;color:#d6d1c8;cursor:pointer;padding:0 2px}
+  .stars input:checked ~ label,.stars label:hover,.stars label:hover ~ label{color:var(--star)}
+  .stars input:focus-visible + label{outline:2px solid var(--brand);border-radius:4px}
+  .nps{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+  .nps input{position:absolute;opacity:0;width:1px;height:1px}
+  .nps label{margin:0;text-align:center;padding:9px 0;border:1px solid var(--line);border-radius:8px;font-size:14px;cursor:pointer;background:#fcfbf9}
+  .nps input:checked + label{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .nps-ends{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px}
+  .check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;margin:12px 0}
+  .check input{margin-top:4px;width:18px;height:18px;accent-color:var(--brand)}
+  button{width:100%;padding:15px;border:0;border-radius:12px;background:var(--brand);color:#fff;font:600 16px Inter,sans-serif;cursor:pointer}
+  button:hover{background:var(--brand-dark)}
+  button:disabled{opacity:.6;cursor:wait}
+  .msg{display:none;text-align:center;padding:40px 20px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+  .msg h2{font-family:Outfit,Inter,sans-serif;color:var(--ink);margin-top:0}
+  .err{color:#a33;font-size:14px;margin-top:10px;display:none;text-align:center}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+  .sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="/" class="logo-lockup" aria-label="Fraternal Cabins home"><svg class="logo-icon" width="40" height="36" viewBox="0 0 80 72" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M24,52 L48,64 L48,44 L36,24 L24,32 Z"/><path d="M48,64 L48,44 L64,36 L64,56 Z"/><path d="M48,44 L36,24 L52,16 L64,36 Z"/></g><polygon points="30,55 40,60 40,46 30,41" fill="currentColor"/></svg><span class="logo-text"><span class="logo-name">Fraternal</span><span class="logo-rule-el"></span><span class="logo-desc">Cabins &middot; Hawke's Bay</span></span></a>
+  <a href="/" class="back">&larr; Back to site</a>
+</div></div>
+<div class="wrap">
+  <header>
+    <h1>How did we do? 🏡</h1>
+    <p>Thanks for choosing Fraternal. Your feedback takes 2 minutes and helps us build better cabins.</p>
+  </header>
+
+  <form id="reviewForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+    <input type="hidden" name="access_key" value="4fd308a9-d974-4d63-89d5-2d95669ca9d2">
+    <input type="hidden" name="subject" value="⭐ New Customer Review — Fraternal Cabins">
+    <input type="hidden" name="from_name" value="Fraternal Review Form">
+    <input type="hidden" name="redirect" value="https://www.fraternal.co.nz/review/#thanks">
+    <input type="checkbox" name="botcheck" class="sr" tabindex="-1" autocomplete="off">
+
+    <fieldset>
+      <legend>About you</legend>
+      <div class="row">
+        <div>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="town">Town / area</label>
+          <input type="text" id="town" name="town" placeholder="e.g. Hastings">
+        </div>
+      </div>
+      <label for="email">Email <span class="hint">(optional — only if you'd like a reply)</span></label>
+      <input type="email" id="email" name="email">
+
+      <label for="service">What did you get from us?</label>
+      <select id="service" name="service" required>
+        <option value="">Choose one…</option>
+        <option>Bought a cabin outright</option>
+        <option>Rent-to-own cabin</option>
+        <option>Weekly cabin rental</option>
+        <option>Custom / design &amp; build cabin</option>
+        <option>Commercial build</option>
+        <option>Other</option>
+      </select>
+
+      <label for="purpose">What do you use your cabin for? <span class="hint">(optional)</span></label>
+      <input type="text" id="purpose" name="cabin_use" placeholder="e.g. Extra bedroom, sleepout, home office, salon">
+    </fieldset>
+
+    <fieldset>
+      <legend>Rate your experience</legend>
+      <div id="ratings"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Would you recommend us?</legend>
+      <label style="margin-top:0">How likely are you to recommend Fraternal to a friend or whānau?</label>
+      <div class="nps" id="nps"></div>
+      <div class="nps-ends"><span>Not likely</span><span>Very likely</span></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your review</legend>
+      <label for="review">Tell us about your experience</label>
+      <textarea id="review" name="review" required placeholder="What stood out? How's the cabin going?"></textarea>
+
+      <label for="improve">Anything we could do better? <span class="hint">(optional, stays private)</span></label>
+      <textarea id="improve" name="improve_private" style="min-height:90px"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Sharing your review</legend>
+      <label class="check"><input type="checkbox" name="permission_to_publish" value="Yes"> I'm happy for Fraternal to share my review on its website and social media.</label>
+      <label for="display">If shared, show my name as:</label>
+      <select id="display" name="display_name_as">
+        <option>First name + town (e.g. Sarah, Hastings)</option>
+        <option>First name only</option>
+        <option>Anonymous</option>
+      </select>
+      <label class="check"><input type="checkbox" name="photo_ok" value="Yes"> I'm happy to send a photo of my cabin.</label>
+    </fieldset>
+
+    <button type="submit" id="submitBtn">Submit review</button>
+    <div class="err" id="err">Something went wrong. Please try again or message us on Facebook.</div>
+  </form>
+
+  <div class="msg" id="thanks">
+    <h2>Ngā mihi, thank you! 🙌</h2>
+    <p>Your review has been sent to the Fraternal team. We really appreciate you taking the time.</p>
+  </div>
+
+  <footer>Fraternal Cabins · Built in Hawke's Bay · <a href="/" style="color:var(--brand)">fraternal.co.nz</a></footer>
+</div>
+
+<script>
+  // Show thank-you if returning from fallback submit
+  if(location.hash==='#thanks'){document.getElementById('reviewForm').style.display='none';document.getElementById('thanks').style.display='block';}
+
+  // Build star rating rows
+  const cats = [
+    ["rating_overall","Overall experience"],
+    ["rating_build_quality","Build quality"],
+    ["rating_communication","Communication"],
+    ["rating_delivery_setup","Delivery & set-up"],
+    ["rating_value","Value for money"]
+  ];
+  const ratings = document.getElementById("ratings");
+  cats.forEach(([key,label])=>{
+    const row = document.createElement("div");
+    row.className = "rate";
+    let html = `<span>${label}</span><div class="stars" role="radiogroup" aria-label="${label}">`;
+    for(let i=5;i>=1;i--){
+      html += `<input type="radio" id="${key}${i}" name="${key}" value="${i} / 5" ${key==="rating_overall"?"required":""}><label for="${key}${i}" title="${i} star${i>1?"s":""}">★</label>`;
+    }
+    row.innerHTML = html + "</div>";
+    ratings.appendChild(row);
+  });
+
+  // Build 0-10 recommend scale
+  const nps = document.getElementById("nps");
+  for(let i=0;i<=10;i++){
+    nps.insertAdjacentHTML("beforeend",
+      `<input type="radio" id="nps${i}" name="likely_to_recommend" value="${i} / 10"><label for="nps${i}">${i}</label>`);
+  }
+
+  // Submit via Web3Forms
+  const form = document.getElementById("reviewForm");
+  form.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const err = document.getElementById("err");
+    err.style.display = "none";
+    const f = form.elements;
+    if(!f["name"].value.trim() || !f["service"].value || !f["review"].value.trim() || !form.querySelector('input[name="rating_overall"]:checked')){
+      err.textContent = "Please add your name, what you got, an overall star rating and a short review.";
+      err.style.display = "block"; return;
+    }
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true; btn.textContent = "Sending…";
+    try{
+      const res = await fetch(form.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(form)});
+      const data = await res.json();
+      if(data.success){
+        form.style.display="none";
+        document.getElementById("thanks").style.display="block";
+        window.scrollTo({top:0,behavior:"smooth"});
+      } else { throw new Error(data.message); }
+    }catch(ex){
+      // Background send was blocked (e.g. browser privacy settings).
+      // Fall back to a normal form submit, which Web3Forms always accepts.
+      HTMLFormElement.prototype.submit.call(form);
+    }
+  });
+</script>
+</body>
+</html>
